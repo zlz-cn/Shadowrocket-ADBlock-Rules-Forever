@@ -53,7 +53,7 @@ jobs:
   
       - name: Replace files
         run: 
-          sed -i "ipv6 = false/ipv6 = true" ../release/sr_top500_banlist_ad.conf
+          sed -i "s/ipv6 = false/ipv6 = true/g" ./release/sr_top500_banlist_ad.conf
           
       - name: Update lazy rules
         run: |
