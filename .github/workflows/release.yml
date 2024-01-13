@@ -50,7 +50,11 @@ jobs:
           cp -r figure ../release/
           cp LICENSE ../release/
           cp readme.md ../release/
-      
+  
+      - name: Replace files
+        run: 
+          sed -i "ipv6 = false/ipv6 = true" ../release/sr_top500_banlist_ad.conf
+          
       - name: Update lazy rules
         run: |
           cd release || exit 1
